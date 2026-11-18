@@ -19,6 +19,20 @@ int color[3] = { 0, 0, 0 };
 int i = 0;
 bool inc = true;
 
+void printColor(int i) {
+  switch(i) {
+  case 0:
+    Serial.println("red");
+    break;
+  case 1:
+    Serial.println("green");
+    break;
+  case 2:
+    Serial.println("blue");
+    break;
+  }
+}
+
 void loop() {
   // cycle through red, then green, then blue
   if (color[i] > 0 && !inc) {
@@ -33,6 +47,7 @@ void loop() {
     i++;
     i %= 3;
     inc = true;
+    printColor(i);
   }
 
   analogWrite(RED, color[0]);

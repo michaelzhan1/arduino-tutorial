@@ -1,0 +1,26 @@
+
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Arduino: Build",
+      "type": "shell",
+      "command": "arduino-cli compile --fqbn arduino:avr:mega \"${fileDirname}\"",
+      "group": "build"
+    },
+    {
+      "label": "Arduino: Upload",
+      "type": "shell",
+      "command": "arduino-cli upload -p ${input:arduinoPort} --fqbn arduino:avr:mega \"${fileDirname}\"",
+      "dependsOn": "Arduino: Build",
+    }
+  ],
+  "inputs": [
+    {
+      "id": "arduinoPort",
+      "type": "promptString",
+      "description": "Arduino serial port",
+      "default": "/dev/cu.usbmodem1101"
+    }
+  ]
+}
