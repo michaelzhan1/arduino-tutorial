@@ -1,3 +1,5 @@
+#include <Arduino.h>
+
 #define LED_PIN 8
 #define BTN_PIN 2
 

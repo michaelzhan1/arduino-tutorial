@@ -1,3 +1,5 @@
+#include <Arduino.h>
+
 #define BTN_PIN 2
 #define BZR_PIN 8
 

@@ -1,3 +1,5 @@
+#include <Arduino.h>
+
 #define DELAY 10
 
 #define MAX_VAL 120
